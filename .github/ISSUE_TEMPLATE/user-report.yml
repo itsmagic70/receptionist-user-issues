@@ -1,0 +1,70 @@
+name: Report a user issue
+description: Report a problem in the receptionist.today user experience.
+title: "[User] "
+labels: ["user-report", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include passwords, API keys, card data, private customer records, call recordings or other sensitive information.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Workspace / navigation
+        - Onboarding / signup
+        - Calls / conversations
+        - Phone numbers / forwarding
+        - Calendar / appointments
+        - Contacts / follow-ups
+        - Business / services / products
+        - Knowledge Base
+        - Email activity
+        - Visual / layout
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: One or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Open ...\n2. Click ...\n3. See ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: "Chrome on Windows 11, iPhone Safari, etc."
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or links
+      description: Remove personal or sensitive information before attaching.
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Privacy check
+      options:
+        - label: I have not included passwords, credentials, card data or private customer information.
+          required: true
